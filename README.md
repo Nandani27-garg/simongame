@@ -1,49 +1,47 @@
 # 🎮 Simon Says Game
 
-A fun and interactive **Simon Says Game** built using **HTML, CSS, and JavaScript**. The game challenges players to remember and repeat an increasingly difficult sequence of colors, testing memory, focus, and concentration.
+A browser-based **Simon Says memory game** built with HTML, CSS, and vanilla JavaScript.
 
 ## 🚀 Live Demo
 
-👉 [Play Simon Says Game](https://nandani27-garg.github.io/simongame/)
-
-## 📂 GitHub Repository
-
-👉 [View Source Code](https://github.com/Nandani27-garg/simongame)
+[Play the game](https://nandani27-garg.github.io/simongame/)
 
 ## ✨ Features
 
-* 🎮 Interactive gameplay
-* 🧠 Memory-based challenge
-* 🔢 Increasing difficulty with each level
-* 🎨 Color-based sequence
-* ⚡ Instant user interaction
-* 📱 Simple and responsive interface
+- 🎮 Interactive Simon Says gameplay
+- 🧠 Increasing memory challenge
+- 🎨 Four color buttons
+- ⚡ Visual feedback for game and user actions
+- 🔄 Automatic level progression
+- 💥 Game-over and restart flow
+- 📱 Responsive layout for desktop and mobile
+- ♿ Keyboard-accessible buttons with visible focus states
 
-## 🛠️ Technologies Used
+## 🛠️ Tech Stack
 
-* **HTML5** – Structure of the game
-* **CSS3** – Styling and layout
-* **JavaScript** – Game logic and interactions
+- HTML5
+- CSS3
+- JavaScript (ES6)
+
+## 🎯 How to Play
+
+1. Press any keyboard key to start.
+2. Watch the color that flashes.
+3. Click the matching color.
+4. Each successful round adds another color to the sequence.
+5. Repeat the complete sequence in the correct order.
+6. Click the wrong color and the game ends.
+7. Press any key to start a new game.
 
 ## 📁 Project Structure
 
 ```text
 simongame/
-│
 ├── index.html
 ├── simon.css
 ├── simon.js
 └── README.md
 ```
-
-## 🎯 How to Play
-
-1. Press any key to start the game.
-2. Watch the sequence of colors carefully.
-3. Repeat the same sequence by clicking the colored buttons.
-4. With every successful round, the sequence becomes longer.
-5. Continue playing and try to reach the highest level possible.
-6. If you select the wrong sequence, the game ends.
 
 ## 💻 Run Locally
 
@@ -51,17 +49,16 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/Nandani27-garg/simongame.git
+cd simongame
 ```
 
-Open the project folder and run `index.html` in your browser.
+Then open `index.html` in a browser, or use VS Code Live Server.
 
 ## 👩‍💻 Author
 
 **Nandani Garg**
 
-* GitHub: [Nandani27-garg](https://github.com/Nandani27-garg)
-* LinkedIn: [Nandani Garg](https://www.linkedin.com/in/nandani27/)
+- GitHub: https://github.com/Nandani27-garg
+- LinkedIn: https://www.linkedin.com/in/nandani27/
 
----
-
-⭐ If you like this project, consider giving it a star!
+⭐ If you like the project, consider giving it a star.
