@@ -1,24 +1,20 @@
 let gameSeq = [];
 let userSeq = [];
 
-
-let btns = ["red", "yellow", "green", "purple"];
-
-
+const btns = ["red", "yellow", "green", "purple"];
 
 let started = false;
 let level = 0;
 
-let h2 = document.querySelector("h2");
+const h2 = document.querySelector("h2");
+const allBtns = document.querySelectorAll(".btn");
 
-document.addEventListener("key pressed", function () {
-    if (started == false) {
-        console.log("game is started");
+// Start the game when the user presses any key.
+document.addEventListener("keydown", function () {
+    if (!started) {
         started = true;
-
         levelUp();
     }
-
 });
 
 function gameFlash(btn) {
@@ -35,56 +31,49 @@ function userFlash(btn) {
     }, 250);
 }
 
-
-function LevelUp() {
+function levelUp() {
     userSeq = [];
     level++;
     h2.innerText = `Level ${level}`;
 
-    let randIdx = Math.floor(Math.random() * btns.length);
-    let randColor = btns[randIdx];
-    let randBtn = document.querySelector(`.${randColor}`);
-    gameSeq.push(randColor);
-    console.log(gameSeq);
-    gameFlash(randBtn);
-    
+    const randIdx = Math.floor(Math.random() * btns.length);
+    const randColor = btns[randIdx];
+    const randBtn = document.querySelector(`.btn.${randColor}`);
 
+    gameSeq.push(randColor);
+    gameFlash(randBtn);
 }
 
 function checkAns(idx) {
-    //     console.log("curr level :",level);
-
     if (userSeq[idx] === gameSeq[idx]) {
-
-        if (userSeq.length == gameSeq.length) {
-            setTimeout(LevelUp, 1000);
+        if (userSeq.length === gameSeq.length) {
+            setTimeout(levelUp, 1000);
         }
     } else {
-        h2.innerHTML = `Game Over ! Your score was <b>${level}</b> <br>Press any key to start.`;
-        document.querySelector("body").style.backgroundColor = "red";
-        setTimeout(function () {
-            document.querySelector("body").style.backgroundColor = "white";
+        h2.innerHTML = `Game Over! Your score was <b>${level}</b><br>Press any key to restart.`;
 
+        document.body.style.backgroundColor = "red";
+
+        setTimeout(function () {
+            document.body.style.backgroundColor = "white";
         }, 150);
+
         reset();
     }
 }
 
-
 function btnPress() {
-    // console.log(this);
-    
-    let btn = this;
+    if (!started) return;
+
+    const btn = this;
     userFlash(btn);
 
-    let userColor = btn.getAttribute("id");
+    const userColor = btn.getAttribute("id");
     userSeq.push(userColor);
     checkAns(userSeq.length - 1);
 }
 
-
-let allBtns = document.querySelectorAll(".btn");
-for (btn of allBtns) {
+for (const btn of allBtns) {
     btn.addEventListener("click", btnPress);
 }
 
